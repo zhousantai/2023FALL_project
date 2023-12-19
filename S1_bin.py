@@ -11,6 +11,7 @@ cat_features = ["B_30", "B_38", "D_114", "D_116", "D_117", "D_120", "D_126", "D_
 ignore_features = ["B_30", "B_38", "D_114", "D_116", "D_117",
                    "D_120", "D_126", "D_63", "D_64", "D_66", "D_68", 'S_2', 'customer_ID']
 
+
 def denoise(df):
     df['D_63'] = df['D_63'].apply(lambda t: {'CR': 0, 'XZ': 1, 'XM': 2, 'CO': 3, 'CL': 4, 'XL': 5}[t]).astype(np.int8)
     df['D_64'] = df['D_64'].apply(lambda t: {np.nan: -1, 'O': 0, '-1': 1, 'R': 2, 'U': 3}[t]).astype(np.int8)
